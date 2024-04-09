@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "12a32cda-a4f8-42c9-8650-aa1c6790519a",
+		"name": "MiniProjetoCRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34019033"
+	},
+	"item": [
+		{
+			"name": "Adicionar Produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nomeProduto\" : \"Maracuja\",\r\n    \"valor\" : 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/adicionarproduto",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"adicionarproduto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3002/listarprodutos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"listarprodutos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 2,\r\n    \"nomeProduto\" : \"Maracujá\",\r\n    \"valor\" : 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/atualizarproduto/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"atualizarproduto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3002/produto/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"produto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
