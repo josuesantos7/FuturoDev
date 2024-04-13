@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\" : 1,\r\n    \"nomeProduto\" : \"Maracuja\",\r\n    \"valor\" : 8\r\n}",
+					"raw": "{\r\n    \"nomeProduto\" : \"Maracuja\",\r\n    \"valor\" : 8,\r\n    \"descricao\" : \"Fruta amarela\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,7 +66,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\" : 2,\r\n    \"nomeProduto\" : \"Maracujá\",\r\n    \"valor\" : 7\r\n}",
+					"raw": "{\r\n    \"nomeProduto\" : \"Maracujá\",\r\n    \"valor\" : 3,\r\n    \"descricao\" : \"Fruta amarela com caroço\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -74,7 +74,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3002/atualizarproduto/2",
+					"raw": "http://127.0.0.1:3002/atualizarproduto/1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -85,7 +85,7 @@
 					"port": "3002",
 					"path": [
 						"atualizarproduto",
-						"2"
+						"1"
 					]
 				}
 			},

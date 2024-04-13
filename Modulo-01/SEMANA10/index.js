@@ -24,14 +24,23 @@ let ListaProdutos = [];
 
 // adicionar um novo produto:
 app.post("/adicionarproduto", logHoraMiddleware, function(req, res){
-    const {id, nomeProduto, valor } = req.body
+    const {nomeProduto, valor, descricao } = req.body
 
-    let NovoProduto = {id, nomeProduto, valor}
+    // Validando os dados
+    if (!nomeProduto || !valor || !descricao) {
+        return res.status(400).json({ error: "Por favor, digite o Id, Nome do produto, valor e descrição."})
+    }
+    // verificar se o usuário passou um número válido
+    if (isNaN(valor)){
+        return res.status(400).json({ error: "O valor deve ser um número válido"})
+    }
+
+    let NovoProduto = { id: ListaProdutos.length + 1, nomeProduto, valor, descricao}
 
     if (NovoProduto){
         ListaProdutos.push(NovoProduto)
         return res.status(201).json({
-            message:`Produto adicionado com sucesso: ${id}, ${nomeProduto}, ${valor}`
+            message:`Produto adicionado com sucesso: ${nomeProduto}, ${valor}, ${descricao}`
         })
     }
     return res.status(400).json({
@@ -46,7 +55,7 @@ app.get("/listarprodutos", logHoraMiddleware, function(req, res){
 
 
 app.put("/atualizarproduto/:id", logHoraMiddleware, function(req, res){
-    const {id, nomeProduto, valor} = req.body
+    const {nomeProduto, valor, descricao} = req.body
     const produtoId = parseInt(req.params.id)
     const ListaFiltrada = ListaProdutos.filter((produto) => produto.id === parseInt(produtoId))[0]
 
@@ -57,15 +66,14 @@ app.put("/atualizarproduto/:id", logHoraMiddleware, function(req, res){
     }
     const index = ListaProdutos.indexOf(ListaFiltrada)
 
-
-    ListaProdutos[index].id = id
     ListaProdutos[index].nomeProduto = nomeProduto
     ListaProdutos[index].valor = valor
+    ListaProdutos[index].descricao = descricao
 
 
     const updated = ListaProdutos[index];
     return res.status(200).json({
-        message:`Dados atualizados: ${updated.id}, ${updated.nomeProduto}, ${updated.valor} `
+        message:`Dados atualizados:${updated.nomeProduto}, ${updated.valor}, ${updated.descricao}`
     })
 })
 
