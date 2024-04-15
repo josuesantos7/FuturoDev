@@ -1,9 +1,9 @@
 const express = require("express")
-
 const app = express();
-
 app.use(express.json());
 
+
+// Middleware para log da data, log e url. 
 const logHoraMiddleware = (req, res, next) => {
     const horaAtual = new Date().toISOString();
     console.log(
@@ -22,6 +22,7 @@ app.get("/", logHoraMiddleware, function(req, res){
 // minha lista
 let ListaProdutos = [];
 
+
 // adicionar um novo produto:
 app.post("/adicionarproduto", logHoraMiddleware, function(req, res){
     const {nomeProduto, valor, descricao } = req.body
@@ -30,6 +31,7 @@ app.post("/adicionarproduto", logHoraMiddleware, function(req, res){
     if (!nomeProduto || !valor || !descricao) {
         return res.status(400).json({ error: "Por favor, digite o Id, Nome do produto, valor e descrição."})
     }
+
     // verificar se o usuário passou um número válido
     if (isNaN(valor)){
         return res.status(400).json({ error: "O valor deve ser um número válido"})
