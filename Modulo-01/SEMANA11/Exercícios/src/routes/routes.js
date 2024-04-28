@@ -72,13 +72,13 @@ routes.post("/cursos", async(req, res) => {
 
 
 // ex2
-routes.get("/cursos", async(req, res) => {
+routes.get("/cursos/listar", async(req, res) => {
     const cursos = await Curso.findAll()
     res.json(cursos)
 })
 
 // ex3 
-routes.get("cursos/", async(req, res) => {
+routes.get("/cursos", async(req, res) => {
     try {
         let params = {}
 

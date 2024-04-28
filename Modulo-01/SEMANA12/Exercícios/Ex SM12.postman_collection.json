@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "26d57588-c631-437d-a87c-8a91e675d691",
+		"name": "Ex SM12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34019033"
+	},
+	"item": [
+		{
+			"name": "Gerencia Aluno",
+			"item": [
+				{
+					"name": "Cadastrar Aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Amanda\",\r\n    \"data_nascimento\": \"1998-05-21\",\r\n    \"celular\": \"96991203040\",\r\n    \"email\": \"amanda@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/alunos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gerencia Curso",
+			"item": [
+				{
+					"name": "Criar curso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImZlcm5hbmRhQGdtYWlsLmNvbSIsIm5vbWUiOiJGZXJuYW5kYSBTYW50b3MiLCJpYXQiOjE3MTQyNTAwNDV9._TKoTPwKzsqgh5I9N5KjwgVX2fYWHRhy00v4qBxbPIY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"duracao_horas\": 65\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/cursos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos os Cursos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImZlcm5hbmRhQGdtYWlsLmNvbSIsIm5vbWUiOiJGZXJuYW5kYSBTYW50b3MiLCJpYXQiOjE3MTQyNTAwNDV9._TKoTPwKzsqgh5I9N5KjwgVX2fYWHRhy00v4qBxbPIY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/cursos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar curso por nome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImZlcm5hbmRhQGdtYWlsLmNvbSIsIm5vbWUiOiJGZXJuYW5kYSBTYW50b3MiLCJpYXQiOjE3MTQyNTAwNDV9._TKoTPwKzsqgh5I9N5KjwgVX2fYWHRhy00v4qBxbPIY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/cursos/?nome=teste",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "teste"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar curso",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImZlcm5hbmRhQGdtYWlsLmNvbSIsIm5vbWUiOiJGZXJuYW5kYSBTYW50b3MiLCJpYXQiOjE3MTQyNTAwNDV9._TKoTPwKzsqgh5I9N5KjwgVX2fYWHRhy00v4qBxbPIY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Educação Financeira\",\r\n    \"duracao_horas\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/cursos/15",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								"15"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar curso",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImZlcm5hbmRhQGdtYWlsLmNvbSIsIm5vbWUiOiJGZXJuYW5kYSBTYW50b3MiLCJpYXQiOjE3MTQyNTAwNDV9._TKoTPwKzsqgh5I9N5KjwgVX2fYWHRhy00v4qBxbPIY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/cursos/15",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fernanda@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -36,6 +36,7 @@ class LoginController {
 
             const payload = {sub: aluno.id, email: aluno.email, nome: aluno.nome}
     
+            // função sign para assinar o token.
             const token = sign(payload, process.env.SECRET_JWT)        
     
             res.status(200).json({Token: token})
