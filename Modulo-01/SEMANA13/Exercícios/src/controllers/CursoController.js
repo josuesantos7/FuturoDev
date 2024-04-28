@@ -61,7 +61,20 @@ class CursoController {
     }
 
 
-    
+    async deletar(req, res) {
+        const { id } = req.params
+
+        Curso.destroy({
+            where: {
+                id: id
+            }
+        }) // DELETE cursos from cursos where id = 1
+
+        res.status(204).json({})
+    }
+
+
+
 }
 
 
